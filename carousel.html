@@ -1,0 +1,62 @@
+<div id="gal2" style="width100; "><img src="img4.jpg" /> 
+  <script> var a=0;
+    var em = document.querySelector("#gal2");
+    em.addEventListener('click', processClick);
+    function processClick(evt) {
+      var y= '<img src="img3.jpg" />';
+      var y2= '<img src="img4.jpg" />';
+      var y3= '<img src="img5.jpg" />';
+      if (x==0) { 
+        y='<img src="img4.jpg" />';
+        x+=1
+      }
+      else if (x==1) { 
+        y='<img src="img5.jpg" />';
+        x+=1
+      }
+      else if (x==2) { 
+        y='<img src="img6.jpg" />';
+        x+=1
+      }
+      else  { 
+        y='<img src="img3.jpg" />';
+        x=0;
+      }
+      if (a==0) { 
+        y2='<img src="img5.jpg" />';
+        a+=1
+      }
+      else if (a==1) { 
+        y2='<img src="img6.jpg" />';
+        a+=1
+      }
+      else if (a==2) { 
+        y2='<img src="img3.jpg" />';
+        a+=1
+      }
+      else  { 
+        y2='<img src="img4.jpg" />';
+        a=0;
+      }
+      if (b==0) { 
+        y3='<img src="img6.jpg" />';
+        b+=1
+      }
+      else if (b==1) { 
+        y3='<img src="img3.jpg" />';
+        b+=1
+      }
+      else if (b==2) { 
+        y3='<img src="img4.jpg" />';
+        b+=1
+      }
+      else  { 
+        y3='<img src="img5.jpg" />';
+        b=0;
+      }
+      document.getElementById('gal').innerHTML = y;
+      document.getElementById('gal2').innerHTML = y2;
+      document.getElementById('gal3').innerHTML = y3;
+    }
+  </script>
+</div>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <title>jQuery UI</title>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+     <style type="text/css">
+        .draggable, .droppable {font-size: large; border: medium solid black;
+            padding: 4px; width: 100px; text-align: center;
+            background-color: lightgray; margin-bottom: 10px;}
+        .droppable {margin-right: 5px; height: 50px; width: 120px}
+        #dropContainer {position: relative; float: right;}
+        div span {position: relative; top: 25%}
+        .droppable.active {border: medium solid green}
+        .droppable.hover {background-color: lightgreen}
+        #container { border: medium double black; width: 1200px; height: 450px}
+        #container2 { width: 1200px; height: 100px; text-align: center}
+    </style>
+    <script type="text/javascript">
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
+    var count4 = 0;
+
+$(function() {
+	
+    $('#even1').draggable({
+        scope: "even",
+        containment: "parent"
+    });
+     $('#even2').draggable({
+        scope: "even",
+        containment: "parent"
+    });
+    $('#odd1').draggable({
+        scope: "odd",
+        containment: "parent"
+    });    
+    $('#odd2').draggable({
+        scope: "odd",
+        containment: "parent"
+    });     
+    
+    $('#oddDrop').droppable({
+        activeClass: "active",
+        hoverClass: "hover",
+        scope: "odd",
+        drop: function() {
+           
+            count2+=1
+        },
+        out: function() {
+           if (count2>0)
+            count2-=1
+        }
+        
+    });
+    
+    $('#evenDrop').droppable({
+        activeClass: "active",
+        hoverClass: "hover",
+        scope: "even"
+        ,
+        drop: function() {
+           
+            count1+=1
+        },
+        out: function() {
+           if (count1>0)
+            count1-=1
+        }
+    });  
+
+});
+
+function sendForm(){
+
+        alert("Количество попаданий четных: "+count2+"Количество попаданий нечетных: "+count1);
+}
+    </script> 
+</head>
+<body>
+    <div id="container">
+        <div id="dropContainer">
+            <div id="oddDrop" class="droppable">
+                <span>Четные</span>
+            </div>
+            <div id="evenDrop" class="droppable">
+                <span>Нечетные</span>
+            </div>        
+        </div>
+    
+        <div id="even1" class="draggable ui-state-error">
+            <span>1</span>
+        </div> 
+        
+        <div id="odd1" class="draggable ui-state-error">
+            <span>2</span>
+        </div>  
+
+        <div id="even2" class="draggable ui-state-error">
+            <span>3</span>
+        </div> 
+
+        <div id="odd2" class="draggable ui-state-error">
+            <span>4</span>
+        </div>  
+    </div>  
+    <div id="container2">
+     <input type="submit" name="send" onclick="sendForm()" value="Счетчик" />  
+     </div>
+</body>
+</html>
