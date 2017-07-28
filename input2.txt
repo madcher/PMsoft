@@ -1,0 +1,25 @@
+<div style="font-size:30px">Введите слово &quot;инфляция&quot;
+</div>
+<div style="  background-image: url(img/bg1.png);background-position: bottom; background-repeat: no-repeat; width:759px; height:423px">
+  <div style="font-size:30px; padding: 50px; padding-left:550px; padding-top: 150px">
+    <input id="inpt5" onkeyup="var yratext=/['а-я',':']/; if(yratext.test(this.value)) this.value=''" required="" style="	padding: 6px 0 4px 10px; border: 1px solid #cecece;  border-radius: 8px; width:110px; font-size:33px " type="text" />
+  </div>
+</div>
+<br />
+<input id="inpt3" onclick="doSomething(event)" style="width:60px;  border-radius: 3px; font-size:30px" type="button" value="Ок" />
+<div id="res" style="font-size:30px; padding: 50px;">&nbsp;
+</div>
+<script>
+  var val="";
+  function doSomething(evt) {
+    // this is the slider value
+    val = document.querySelector('#inpt5').value;
+    console.log(val);
+    if (val!="10000"){
+      document.getElementById('res').innerHTML = "Неправильно"; 
+    }
+    else{
+      document.getElementById('res').innerHTML = "Правильно"; 
+    }
+  }
+</script>

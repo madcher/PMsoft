@@ -1,0 +1,18 @@
+<div style="font-size:30px; padding: 50px;">Введите слово &quot;инфляция&quot; 
+  <input id="inpt5" onkeyup="var yratext=/['0-9',':']/; if(yratext.test(this.value)) this.value=''" required="" style="	padding: 6px 0 4px 10px; border: 1px solid #cecece; background: #F6F6f6; border-radius: 8px;" type="text" /> 
+  <input id="inpt3" onclick="doSomething(event)" type="button" value="ClickMe" /> 
+  <script>
+    var val="";
+    function doSomething(evt) {
+      // this is the slider value
+      val = document.querySelector('#inpt5').value;
+      console.log(val);
+      if (val!="инфляция"){
+        alert("wrong !!!");
+      }
+      else{
+        alert("good!!!");
+      }
+    }
+  </script>
+</div>
